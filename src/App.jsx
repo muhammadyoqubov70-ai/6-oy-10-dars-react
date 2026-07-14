@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import PublicLayaout from "./lyaoutes/PublicLayaout";
+
 import AuthLayaout from "./lyaoutes/AuthLayaout";
 import AdminLayaout from "./lyaoutes/AdminLayaout";
 import HeroHome from "./components/HeroHome";
@@ -7,8 +7,10 @@ import WhyChoose from "./components/WhyChoose";
 import LatesPost from "./components/LatesPost";
 import PostDetail from "./components/PostDetail";
 import Login from "./components/Login";
-import Register from "./components/Register";
+
 import "./App.css";
+import PublicLayaout from "./lyaoutes/PublicLayout";
+import Register from "./components/Registar";
 
 function Home() {
   return (

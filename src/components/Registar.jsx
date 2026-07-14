@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Input from "./Input";
 import Button from "./Button";
 
@@ -40,32 +40,59 @@ function Register() {
   };
 
   return (
-    <form className="auth-form" onSubmit={handleSubmit}>
-      <h2>Ro'yxatdan o'tish</h2>
-      {error && <p className="auth-error">{error}</p>}
-      <Input
-        label="Ism"
-        type="text"
-        placeholder="Ismingiz"
-        value={form.name}
-        onChange={handleChange("name")}
-      />
-      <Input
-        label="Email"
-        type="email"
-        placeholder="email@example.com"
-        value={form.email}
-        onChange={handleChange("email")}
-      />
-      <Input
-        label="Parol"
-        type="password"
-        placeholder="********"
-        value={form.password}
-        onChange={handleChange("password")}
-      />
-      <Button text="Ro'yxatdan o'tish" variant="filled" type="submit" />
-    </form>
+    <div className="auth-split">
+      <div className="auth-split-left">
+        <Link to="/" className="auth-logo">
+          ✏️ Blogify
+        </Link>
+        <Link to="/" className="auth-back">
+          ← Back to Home
+        </Link>
+
+        <div className="auth-card">
+          <h1>Create Account</h1>
+          <p className="auth-subtitle">
+            Join Blogify and start sharing your stories
+          </p>
+
+          {error && <p className="auth-error">{error}</p>}
+
+          <form onSubmit={handleSubmit}>
+            <Input
+              label="Name"
+              type="text"
+              placeholder="Your name"
+              value={form.name}
+              onChange={handleChange("name")}
+            />
+            <Input
+              label="Email"
+              type="email"
+              placeholder="name@example.com"
+              value={form.email}
+              onChange={handleChange("email")}
+            />
+            <Input
+              label="Password"
+              type="password"
+              placeholder="••••••••"
+              value={form.password}
+              onChange={handleChange("password")}
+            />
+            <Button text="Sign Up" variant="filled" type="submit" />
+          </form>
+
+          <p className="auth-switch">
+            Already have an account? <Link to="/login">Login</Link>
+          </p>
+        </div>
+      </div>
+
+      <div className="auth-split-right">
+        <h2>Start Your Journey</h2>
+        <p>Join thousands of creators sharing their stories on Blogify</p>
+      </div>
+    </div>
   );
 }
 
