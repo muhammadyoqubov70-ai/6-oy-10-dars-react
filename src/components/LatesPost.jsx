@@ -10,7 +10,7 @@ export const posts = [
       "Exploring the latest trends and technologies shaping the future of web development in 2024. Modern frameworks, AI-assisted coding, and performance-first design are changing how developers build for the web.",
     category: "Technology",
     date: "Nov 20, 2025",
-    image: "https://via.placeholder.com/800x400/4338CA/ffffff?text=Technology",
+    image: "https://picsum.photos/seed/technology1/800/400",
   },
   {
     id: 2,
@@ -21,8 +21,7 @@ export const posts = [
       "Proven strategies and tools to boost your productivity and achieve your goals faster. From time-blocking to deep work sessions, small habits compound into major results over time.",
     category: "Productivity",
     date: "Nov 18, 2025",
-    image:
-      "https://via.placeholder.com/800x400/6366F1/ffffff?text=Productivity",
+    image: "https://picsum.photos/seed/productivity2/800/400",
   },
   {
     id: 3,
@@ -33,7 +32,7 @@ export const posts = [
       "Essential design principles every creator should know to build stunning user experiences. Consistency, hierarchy, and whitespace are the foundation of every great interface.",
     category: "Design",
     date: "Nov 15, 2025",
-    image: "https://via.placeholder.com/800x400/8B5CF6/ffffff?text=Design",
+    image: "https://picsum.photos/seed/design3/800/400",
   },
 ];
 
