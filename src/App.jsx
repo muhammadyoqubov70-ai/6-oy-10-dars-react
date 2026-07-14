@@ -5,8 +5,9 @@ import AdminLayaout from "./lyaoutes/AdminLayaout";
 import HeroHome from "./components/HeroHome";
 import WhyChoose from "./components/WhyChoose";
 import LatesPost from "./components/LatesPost";
-import Input from "./components/Input";
-import Button from "./components/Button";
+import PostDetail from "./components/PostDetail";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import "./App.css";
 
 function Home() {
@@ -24,29 +25,6 @@ function Blog() {
     <div className="page-container">
       <LatesPost />
     </div>
-  );
-}
-
-function Login() {
-  return (
-    <form className="auth-form">
-      <h2>Kirish</h2>
-      <Input label="Email" type="email" placeholder="email@example.com" />
-      <Input label="Parol" type="password" placeholder="********" />
-      <Button text="Kirish" variant="filled" type="submit" />
-    </form>
-  );
-}
-
-function Register() {
-  return (
-    <form className="auth-form">
-      <h2>Ro'yxatdan o'tish</h2>
-      <Input label="Ism" type="text" placeholder="Ismingiz" />
-      <Input label="Email" type="email" placeholder="email@example.com" />
-      <Input label="Parol" type="password" placeholder="********" />
-      <Button text="Ro'yxatdan o'tish" variant="filled" type="submit" />
-    </form>
   );
 }
 
@@ -71,30 +49,22 @@ function App() {
   return (
     <Routes>
       <Route element={<PublicLayaout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
+        <Route index element={<Home />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="blog/:id" element={<PostDetail />} />
       </Route>
 
       <Route element={<AuthLayaout />}>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Route>
 
-      <Route path="/admin" element={<AdminLayaout />}>
+      <Route path="admin" element={<AdminLayaout />}>
         <Route index element={<AdminDashboard />} />
         <Route path="posts" element={<AdminPosts />} />
       </Route>
     </Routes>
   );
 }
-import PostDetail from "./components/PostDetail";
-
-// ...
-
-<Route path="/" element={<PublicLayaout />}>
-  <Route index element={<Home />} />
-  <Route path="blog" element={<Blog />} />
-  <Route path="blog/:id" element={<PostDetail />} />
-</Route>;
 
 export default App;
