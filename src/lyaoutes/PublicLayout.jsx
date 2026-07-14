@@ -1,11 +1,17 @@
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+
 function PublicLayaout() {
   return (
     <>
-      <header>
-        <Navbar />
-      </header>
-
-      <main></main>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }
+
+export default PublicLayaout;

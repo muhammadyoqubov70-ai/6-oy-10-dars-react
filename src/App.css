@@ -242,3 +242,30 @@
     grid-template-columns: 1fr;
   }
 }
+.post-detail {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.post-detail-back {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.post-detail img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 20px 0;
+}
+
+.post-detail h1 {
+  font-size: 32px;
+  margin: 12px 0;
+}
+
+.post-detail-notfound {
+  text-align: center;
+  padding: 80px 20px;
+}
