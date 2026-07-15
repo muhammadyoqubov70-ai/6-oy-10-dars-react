@@ -1,19 +1,22 @@
+import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Button from "./Button";
+import RightArrow from "./Icons/RightArrow";
 
 function PostCard({ post }) {
   return (
-    <Link to={`/blog/${post.id}`} className="post-card">
-      <div
-        className="post-card-image"
-        style={{ backgroundImage: `url(${post.image})` }}
-      >
-        <span className="post-card-badge">{post.category}</span>
+    <Link to={`/posts/${post.id}`} className="post-card">
+      <div className="post-card-img-wrap">
+        <img src={post.image} alt={post.title} />
       </div>
       <div className="post-card-body">
-        <span className="post-card-date">📅 {post.date}</span>
-        <h3>{post.title}</h3>
+        <div className="post-card-date">
+          <FaCalendarAlt />
+          <span>{post.date}</span>
+        </div>
+        <h2>{post.title}</h2>
         <p>{post.description}</p>
-        <span className="post-card-readmore">Read more →</span>
+        <Button text="Read More" variant="danger" RightArrow={RightArrow} />
       </div>
     </Link>
   );

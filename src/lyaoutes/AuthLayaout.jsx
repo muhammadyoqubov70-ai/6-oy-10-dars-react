@@ -1,16 +1,11 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
-function AuthLayaout() {
+function AuthLaout() {
   return (
-    <div className="auth-layout">
-      <Link to="/" className="auth-logo">
-        Blogify
-      </Link>
-      <div className="auth-box">
-        <Outlet />
-      </div>
-    </div>
+    <main>
+      <Outlet />
+    </main>
   );
 }
 
-export default AuthLayaout;
+export default AuthLaout;

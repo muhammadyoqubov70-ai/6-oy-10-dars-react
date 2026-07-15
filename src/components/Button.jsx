@@ -1,7 +1,8 @@
-function Button({ text, variant = "filled", onClick, type = "button" }) {
+function Button({ text, variant, onClick, RightArrow, className = "" }) {
   return (
-    <button type={type} className={`btn btn-${variant}`} onClick={onClick}>
-      {text}
+    <button className={`btn btn-${variant} ${className}`} onClick={onClick}>
+      <span>{text}</span>
+      {RightArrow && <RightArrow />}
     </button>
   );
 }

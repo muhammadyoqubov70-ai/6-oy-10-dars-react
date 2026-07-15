@@ -1,14 +1,11 @@
-function Input({ label, type = "text", value, onChange, placeholder }) {
+function Input() {
   return (
-    <div className="input-group">
-      {label && <label>{label}</label>}
-      <input
-        type={type}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
-      />
-    </div>
+    <section className="search-page">
+      <h1>Explore Our Posts</h1>
+      <div className="search-box">
+        <input type="text" placeholder="Search posts..." />
+      </div>
+    </section>
   );
 }
 

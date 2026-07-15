@@ -1,37 +1,23 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import MenyuBar from "./MenyuBar";
 import Button from "./Button";
 
 function Navbar() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <header className="navbar">
-      <Link to="/" className="navbar-logo">
-        Blogify
-      </Link>
-
-      <nav className="navbar-links">
-        <Link to="/">Home</Link>
-        <Link to="/blog">Blog</Link>
+    <section className="navbar-wrap">
+      <nav className="navbar center">
+        <Link to="/">
+          <img src="/Link.svg" alt="Blogify" />
+        </Link>
+        <div className="navbar-links">
+          <Link to="/">Home</Link>
+          <Link to="/posts">Posts</Link>
+          <Link to="/login">
+            <Button text="Login" variant="primary" />
+          </Link>
+        </div>
+        <button className="navbar-burger">☰</button>
       </nav>
-
-      <div className="navbar-actions">
-        <Link to="/login">
-          <Button text="Kirish" variant="outline" />
-        </Link>
-        <Link to="/register">
-          <Button text="Ro'yxatdan o'tish" variant="filled" />
-        </Link>
-      </div>
-
-      <button className="navbar-burger" onClick={() => setOpen(true)}>
-        ☰
-      </button>
-
-      {open && <MenyuBar onClose={() => setOpen(false)} />}
-    </header>
+    </section>
   );
 }
 

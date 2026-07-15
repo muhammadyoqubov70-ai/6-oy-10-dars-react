@@ -1,53 +1,14 @@
+import posts from "../data/Cards";
 import PostCard from "./PostCard";
 
-export const posts = [
-  {
-    id: 1,
-    title: "The Future of Web Development",
-    description:
-      "Exploring the latest trends and technologies shaping the future of web development in 2024.",
-    content:
-      "Exploring the latest trends and technologies shaping the future of web development in 2024. Modern frameworks, AI-assisted coding, and performance-first design are changing how developers build for the web.",
-    category: "Technology",
-    date: "Nov 20, 2025",
-    image: "https://picsum.photos/seed/technology1/800/400",
-  },
-  {
-    id: 2,
-    title: "Mastering Productivity",
-    description:
-      "Proven strategies and tools to boost your productivity and achieve your goals faster.",
-    content:
-      "Proven strategies and tools to boost your productivity and achieve your goals faster. From time-blocking to deep work sessions, small habits compound into major results over time.",
-    category: "Productivity",
-    date: "Nov 18, 2025",
-    image: "https://picsum.photos/seed/productivity2/800/400",
-  },
-  {
-    id: 3,
-    title: "Design Principles That Matter",
-    description:
-      "Essential design principles every creator should know to build stunning user experiences.",
-    content:
-      "Essential design principles every creator should know to build stunning user experiences. Consistency, hierarchy, and whitespace are the foundation of every great interface.",
-    category: "Design",
-    date: "Nov 15, 2025",
-    image: "https://picsum.photos/seed/design3/800/400",
-  },
-];
-
-function LatesPost() {
+function LatestPosts() {
   return (
-    <section className="lates-post">
-      <h2>Latest Posts</h2>
-      <p className="lates-post-subtitle">Check out our most recent articles</p>
-      <div className="lates-post-grid">
-        {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
+    <section className="latest-posts center">
+      {posts.slice(0, 3).map((post) => (
+        <PostCard key={post.id} post={post} />
+      ))}
     </section>
   );
 }
 
-export default LatesPost;
+export default LatestPosts;

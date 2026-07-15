@@ -1,72 +1,49 @@
-import { Routes, Route } from "react-router-dom";
+import React from "react";
+import CreatPost from "./pages/admin/CreatPost";
+import Dashboard from "./pages/admin/Dashboard";
+import UpdatePost from "./pages/admin/UpdatePost";
+import LoginPage from "./pages/auth/LoginPage";
+import Error from "./pages/public/Error";
+import Home from "./pages/public/Home";
+import PostDetails from "./pages/public/PostDetail";
+import Posts from "./pages/public/Posts";
+import PubliLayout from "./pages/layouts/PubliLayout";
+import AuthLaout from "./pages/layouts/AuthLaout";
+import AdminLayout from "./pages/layouts/AdminLayout";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import AuthLayaout from "./lyaoutes/AuthLayaout";
-import AdminLayaout from "./lyaoutes/AdminLayaout";
-import HeroHome from "./components/HeroHome";
-import WhyChoose from "./components/WhyChoose";
-import LatesPost from "./components/LatesPost";
-import PostDetail from "./components/PostDetail";
-import Login from "./components/Login";
-
-import "./App.css";
-import PublicLayaout from "./lyaoutes/PublicLayout";
-import Register from "./components/Registar";
-
-function Home() {
-  return (
-    <>
-      <HeroHome />
-      <WhyChoose />
-      <LatesPost />
-    </>
-  );
-}
-
-function Blog() {
-  return (
-    <div className="page-container">
-      <LatesPost />
-    </div>
-  );
-}
-
-function AdminDashboard() {
-  return (
-    <div className="admin-page">
-      <h2>Bosh sahifa</h2>
-      <p>Statistika shu yerda bo'ladi</p>
-    </div>
-  );
-}
-
-function AdminPosts() {
-  return (
-    <div className="admin-page">
-      <h2>Postlarni boshqarish</h2>
-    </div>
-  );
-}
+const routes = createBrowserRouter([
+  {
+    path: "/",
+    element: <PubliLayout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "posts", element: <Posts /> },
+      { path: "posts/:id", element: <PostDetails /> },
+    ],
+  },
+  {
+    path: "/admin",
+    element: <AdminLayout />,
+    children: [
+      { index: true, element: <Dashboard /> },
+      { path: "updatepost", element: <UpdatePost /> },
+      { path: "createpost", element: <CreatPost /> },
+    ],
+  },
+  {
+    path: "/login",
+    element: <AuthLaout />,
+    children: [{ index: true, element: <LoginPage /> }],
+  },
+  {
+    path: "*",
+    element: <Error />,
+  },
+]);
 
 function App() {
-  return (
-    <Routes>
-      <Route element={<PublicLayaout />}>
-        <Route index element={<Home />} />
-        <Route path="blog" element={<Blog />} />
-        <Route path="blog/:id" element={<PostDetail />} />
-      </Route>
-
-      <Route element={<AuthLayaout />}>
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-      </Route>
-
-      <Route path="admin" element={<AdminLayaout />}>
-        <Route index element={<AdminDashboard />} />
-        <Route path="posts" element={<AdminPosts />} />
-      </Route>
-    </Routes>
-  );
+  return <RouterProvider router={routes} />;
 }
 
 export default App;

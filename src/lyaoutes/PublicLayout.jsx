@@ -1,17 +1,17 @@
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
 import { Outlet } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
-function PublicLayaout() {
+function PubliLayout() {
   return (
-    <>
+    <div className="layout-wrap">
       <Navbar />
-      <main>
+      <main className="layout-main">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
-export default PublicLayaout;
+export default PubliLayout;
