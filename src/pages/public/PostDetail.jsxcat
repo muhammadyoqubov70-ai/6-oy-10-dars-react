@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
-import posts from "../../data/Card";
+import { FaCalendarAlt, FaArrowLeft } from "react-icons/fa";
+import posts from "../data/Card";
 
 function PostDetail() {
   const { id } = useParams();
@@ -20,12 +20,16 @@ function PostDetail() {
       <Link to="/posts" className="back-link">
         <FaArrowLeft /> Back to Posts
       </Link>
+
       <span className="post-detail-badge">Technology</span>
       <h1>{post.title}</h1>
+
       <div className="post-detail-meta">
         <span>{post.date}</span>
       </div>
+
       <img className="post-detail-img" src={post.image} alt={post.title} />
+
       <p className="post-detail-desc">{post.description}</p>
     </div>
   );
