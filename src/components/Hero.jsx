@@ -1,5 +1,5 @@
 import Button from "./Button";
-import RightArrow from "./Icons/RightArrow";
+import RightArrow from "./RightArrow";
 
 function Hiro() {
   return (
@@ -10,16 +10,9 @@ function Hiro() {
             <div>Create, Read,</div>
             <div className="hero-gradient">Inspire.</div>
           </h1>
-          <p>
-            Discover stories written by amazing people. Share your knowledge and
-            inspire others with your unique perspective.
-          </p>
+          <p>Discover stories written by amazing people.</p>
           <div className="hero-buttons">
-            <Button
-              text="Explore posts"
-              variant="primary"
-              RightArrow={RightArrow}
-            />
+            <Button text="Explore posts" variant="primary" RightArrow={RightArrow} />
             <Button text="Get started" variant="secondary" />
           </div>
         </div>

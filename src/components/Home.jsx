@@ -1,13 +1,13 @@
-import Hiro from "../../components/Hiro";
-import WhyChoos from "../../components/WhyChoos";
-import LatestPosts from "../../components/LatestPosts";
-import StartText from "../../components/StartText";
+import Hiro from "./Hero";
+import WhyChoose from "./WhyChoose";
+import StartText from "./StartText";
+import LatestPosts from "./LatesPost";
 
 function Home() {
   return (
     <main>
       <Hiro />
-      <WhyChoos />
+      <WhyChoose />
       <StartText />
       <LatestPosts />
     </main>

@@ -1,24 +1,16 @@
-import ChoosCard from "./ChooseCard";
-import { features } from "../product";
+import ChoosCard from "./ChooseCart";
+import { features } from "../data/Product";
 
-function WhyChoos() {
+function WhyChoose() {
   return (
     <section className="why-choose">
       <div className="why-choose-head center">
         <h1>Why Choose Blogify?</h1>
-        <p>
-          Built with modern technologies and best practices to provide the best
-          blogging experience.
-        </p>
+        <p>Built with modern technologies and best practices.</p>
       </div>
       <div className="why-choose-grid center">
         {features.map((item, index) => (
-          <ChoosCard
-            key={index}
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-          />
+          <ChoosCard key={index} icon={item.icon} title={item.title} description={item.description} />
         ))}
       </div>
     </section>

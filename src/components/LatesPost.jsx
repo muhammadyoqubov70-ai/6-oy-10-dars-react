@@ -1,4 +1,4 @@
-import posts from "../data/Cards";
+import posts from "../data/Card";
 import PostCard from "./PostCard";
 
 function LatestPosts() {

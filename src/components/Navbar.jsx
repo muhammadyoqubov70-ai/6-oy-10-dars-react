@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+`import { Link } from "react-router-dom";
 import Button from "./Button";
 
 function Navbar() {
@@ -22,3 +22,4 @@ function Navbar() {
 }
 
 export default Navbar;
+`;

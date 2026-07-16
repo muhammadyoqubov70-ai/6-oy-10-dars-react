@@ -1,7 +1,7 @@
 import { FaCalendarAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Button from "./Button";
-import RightArrow from "./Icons/RightArrow";
+import RightArrow from "./RightArrow";
 
 function PostCard({ post }) {
   return (

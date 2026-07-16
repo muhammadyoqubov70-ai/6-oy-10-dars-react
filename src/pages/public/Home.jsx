@@ -1,4 +1,2 @@
-function Home() {
-  return <div>Home sahifasi</div>;
-}
+import Home from "../../components/Home";
 export default Home;
