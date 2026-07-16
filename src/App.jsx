@@ -1,7 +1,3 @@
-import React from "react";
-import CreatPost from "./pages/admin/CreatPost";
-import Dashboard from "./pages/admin/Dashboard";
-import UpdatePost from "./pages/admin/UpdatePost";
 import LoginPage from "./pages/auth/LoginPage";
 import Error from "./pages/public/Error";
 import Home from "./pages/public/Home";
@@ -11,6 +7,9 @@ import PubliLayout from "./pages/layouts/PubliLayout";
 import AuthLaout from "./pages/layouts/AuthLaout";
 import AdminLayout from "./pages/layouts/AdminLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import CreatPost from "./pages/CreatePost";
+import Dashboard from "./pages/Dashboard";
+import UpdatePost from "./pages/UpdatePost";
 
 const routes = createBrowserRouter([
   {
@@ -36,10 +35,7 @@ const routes = createBrowserRouter([
     element: <AuthLaout />,
     children: [{ index: true, element: <LoginPage /> }],
   },
-  {
-    path: "*",
-    element: <Error />,
-  },
+  { path: "*", element: <Error /> },
 ]);
 
 function App() {
