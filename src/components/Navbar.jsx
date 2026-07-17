@@ -6,7 +6,7 @@ function Navbar() {
     <section className="navbar-wrap">
       <nav className="navbar center">
         <Link to="/">
-          <img src="/Link.svg" alt="Blogify" />
+          <span style={{ fontSize: "22px" }}>📝</span> Blogify
         </Link>
         <div className="navbar-links">
           <Link to="/">Home</Link>

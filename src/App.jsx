@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreatPost from "./pages/CreatePost";
 import Dashboard from "./pages/Dashboard";
 import UpdatePost from "./pages/UpdatePost";
+import { AuthProvider } from "./context/AuthContext";
 
 const routes = createBrowserRouter([
   {
@@ -39,9 +40,11 @@ const routes = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={routes} />;
+  return (
+    <AuthProvider>
+      <RouterProvider router={routes} />
+    </AuthProvider>
+  );
 }
-import PostDetail from "./pages/PostDetail";
-// ...
-<Route path="/posts/:id" element={<PostDetail />} />;
+
 export default App;

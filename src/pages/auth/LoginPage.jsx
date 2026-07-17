@@ -1,39 +1,60 @@
 import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import "./LoginPage.css";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { login, error } = useAuth();
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login:", { email, password });
+    setLoading(true);
+    const success = await login(email, password);
+    setLoading(false);
+    if (success) navigate("/");
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "50px auto" }}>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Email</label>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={{ width: "100%", padding: "8px" }}
-          />
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Parol</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            style={{ width: "100%", padding: "8px" }}
-          />
-        </div>
-        <button type="submit" style={{ padding: "8px 16px" }}>
-          Kirish
+    <div className="login-page">
+      <form className="login-page__card" onSubmit={handleSubmit}>
+        <h2 className="login-page__title">Welcome back</h2>
+        <p className="login-page__subtitle">
+          Enter your credentials to continue
+        </p>
+
+        <label className="login-page__label">Email</label>
+        <input
+          type="email"
+          placeholder="name@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="login-page__input"
+          required
+        />
+
+        <label className="login-page__label">Parol</label>
+        <input
+          type="password"
+          placeholder="••••••••"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="login-page__input"
+          required
+        />
+
+        {error && <p className="login-page__error">{error}</p>}
+
+        <button type="submit" className="login-page__btn" disabled={loading}>
+          {loading ? "Kirilmoqda..." : "Kirish"}
         </button>
+
+        <p className="login-page__footer">
+          Akkountingiz yo'qmi? <Link to="/register">Ro'yxatdan o'tish</Link>
+        </p>
       </form>
     </div>
   );
