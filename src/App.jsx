@@ -41,5 +41,7 @@ const routes = createBrowserRouter([
 function App() {
   return <RouterProvider router={routes} />;
 }
-
+import PostDetail from "./pages/PostDetail";
+// ...
+<Route path="/posts/:id" element={<PostDetail />} />;
 export default App;
