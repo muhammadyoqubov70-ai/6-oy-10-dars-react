@@ -6,7 +6,14 @@ function Footer() {
     <footer className="footer">
       <div className="footer-inner center">
         <div className="footer-brand">
-          <h3 className="footer-logo">📝 Blogify</h3>
+          <h3 className="footer-logo">
+            {" "}
+            <img
+              src="/Link.svg"
+              alt="Logo"
+              style={{ width: "130px", height: "130px", objectFit: "contain" }} // O'lcham 30px dan 45px ga oshirildi
+            />
+          </h3>
           <p>
             Create, read, and inspire. Discover amazing stories written by
             talented creators from around the world.
@@ -21,9 +28,7 @@ function Footer() {
         <div className="footer-col">
           <h1>Connect</h1>
           <div className="footer-icons">
-            <a href="#" aria-label="GitHub">
-              🐙
-            </a>
+            <a href="#" aria-label="GitHub"></a>
             <a href="#" aria-label="Twitter">
               𝕏
             </a>

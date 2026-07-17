@@ -1,7 +1,5 @@
 import Button from "./Button";
 import RightArrow from "./RightArrow";
-// 1. Rasmni import qilib olamiz (fayl yo'lini to'g'ri ko'rsating)
-import HiroSvg from "./Hiro.svg"; // yoki "./assets/Hiro.svg" qayerda turganiga qarab
 
 function Hiro() {
   return (
@@ -10,7 +8,6 @@ function Hiro() {
         <div className="hero-text">
           <h1>
             <div>Create, Read,</div>
-            <img src="" alt="" />
             <div className="hero-gradient">Inspire.</div>
           </h1>
           <p>Discover stories written by amazing people.</p>
@@ -23,8 +20,12 @@ function Hiro() {
             <Button text="Get started" variant="secondary" />
           </div>
         </div>
-        {/* 2. Import qilingan o'zgaruvchini src ichiga yozamiz */}
-        <img className="hero-img" src={HiroSvg} alt="Hero illustration" />
+        {/* Rasm public papkasida bo'lgani uchun import shart emas, to'g'ri nomini yozamiz */}
+        <img
+          className="hero-img"
+          src="/Hero illustration.svg"
+          alt="Hero illustration"
+        />
       </div>
     </section>
   );
