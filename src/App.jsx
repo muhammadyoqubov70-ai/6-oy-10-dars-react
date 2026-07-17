@@ -17,10 +17,15 @@ import { PostProvider } from "./context/PostContext";
 
 const routes = createBrowserRouter([
   {
+    // Eng birinchi kiriladigan mutlaqo toza sahifa (Layout yo'q)
+    path: "/",
+    element: <Home />, 
+  },
+  {
+    // Navbar va Footer faqat mana shu ichki sahifalarda ko'rinadi
     path: "/",
     element: <PubliLayout />,
     children: [
-      { index: true, element: <Home /> },
       { path: "posts", element: <Posts /> },
       { path: "posts/:id", element: <PostDetails /> },
     ],
