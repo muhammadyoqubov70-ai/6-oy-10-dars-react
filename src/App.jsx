@@ -9,8 +9,11 @@ import AdminLayout from "./pages/layouts/AdminLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import CreatPost from "./pages/CreatePost";
 import Dashboard from "./pages/Dashboard";
+import AdminPosts from "./pages/AdminPosts";
 import UpdatePost from "./pages/UpdatePost";
 import { AuthProvider } from "./context/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { PostProvider } from "./context/PostContext";
 
 const routes = createBrowserRouter([
   {
@@ -24,11 +27,17 @@ const routes = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <AdminLayout />,
+    element: <ProtectedRoute />,
     children: [
-      { index: true, element: <Dashboard /> },
-      { path: "updatepost", element: <UpdatePost /> },
-      { path: "createpost", element: <CreatPost /> },
+      {
+        element: <AdminLayout />,
+        children: [
+          { index: true, element: <Dashboard /> },
+          { path: "posts", element: <AdminPosts /> },
+          { path: "updatepost/:id", element: <UpdatePost /> },
+          { path: "createpost", element: <CreatPost /> },
+        ],
+      },
     ],
   },
   {
@@ -42,7 +51,9 @@ const routes = createBrowserRouter([
 function App() {
   return (
     <AuthProvider>
-      <RouterProvider router={routes} />
+      <PostProvider>
+        <RouterProvider router={routes} />
+      </PostProvider>
     </AuthProvider>
   );
 }
