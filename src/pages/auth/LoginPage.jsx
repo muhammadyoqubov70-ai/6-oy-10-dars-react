@@ -15,7 +15,9 @@ function LoginPage() {
     setLoading(true);
     const success = await login(email, password);
     setLoading(false);
-    if (success) navigate("/");
+    
+    // MANA SHU YERNI /admin GA O'ZGARTIRDIK:
+    if (success) navigate("/admin");
   };
 
   return (
@@ -53,7 +55,7 @@ function LoginPage() {
         </button>
 
         <p className="login-page__footer">
-          Akkountingiz yo'qmi? <Link to="/register">Ro'yxatdan o'tish</Link>
+          Akountingiz yo'qmi? <Link to="/register">Ro'yxatdan o'tish</Link>
         </p>
       </form>
     </div>

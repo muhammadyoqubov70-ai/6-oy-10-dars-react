@@ -12,6 +12,15 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     setError(null);
+    
+    // Maxsus admin tekshiruvi (Local Mocking)
+    if (email === "admin@gmail.com" && password === "admin") {
+      setIsAuthenticated(true);
+      // Agar authService ichida localStorage-ga token yozish mantig'i bo'lsa, dars buzilmasligi uchun:
+      localStorage.setItem("token", "fake-admin-token"); 
+      return true;
+    }
+
     try {
       await authService.login(email, password);
       setIsAuthenticated(true);
@@ -35,6 +44,7 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     authService.logout();
+    localStorage.removeItem("token");
     setIsAuthenticated(false);
   };
 
