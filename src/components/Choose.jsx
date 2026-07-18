@@ -1,25 +1,20 @@
-import { PenLine, Zap, ShieldCheck, Globe2 } from "lucide-react";
+import { PenLine, Zap, ShieldCheck } from "lucide-react";
 
 const features = [
   {
     icon: PenLine,
-    title: "Oson yozish",
-    desc: "Sodda va qulay editor yordamida postlaringizni tez va oson yarating.",
+    title: "Easy Writing",
+    desc: "Create your posts quickly and easily with our simple, user-friendly editor.",
   },
   {
     icon: Zap,
-    title: "Tez ishlaydi",
-    desc: "Sayt React asosida qurilgan bo'lib, juda tez va silliq ishlaydi.",
+    title: "Fast Performance",
+    desc: "Built with React, the site runs smoothly and loads incredibly fast.",
   },
   {
     icon: ShieldCheck,
-    title: "Xavfsiz",
-    desc: "Sizning hisobingiz va ma'lumotlaringiz to'liq himoyalangan.",
-  },
-  {
-    icon: Globe2,
-    title: "Keng auditoriya",
-    desc: "Postlaringiz minglab o'quvchilarga yetib boradi.",
+    title: "Secure",
+    desc: "Your account and data are fully protected at all times.",
   },
 ];
 
@@ -27,8 +22,8 @@ function Choose() {
   return (
     <section className="center why-choose">
       <div className="why-choose-head">
-        <h1>Nega aynan Blogify?</h1>
-        <p>Blog yozish va o'qish uchun eng qulay platformani tanlang</p>
+        <h1>Why Choose Blogify?</h1>
+        <p>The most comfortable platform for writing and reading blogs</p>
       </div>
 
       <div className="why-choose-grid">

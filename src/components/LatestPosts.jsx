@@ -48,16 +48,16 @@ function LatestPosts() {
     <section className="center">
       <div className="start-text">
         <div className="start-text-left">
-          <h1>So'nggi postlar</h1>
-          <p>Eng so'nggi va qiziqarli maqolalarni o'qing</p>
+          <h1>Latest Posts</h1>
+          <p>Read the newest and most interesting articles</p>
         </div>
         <Link to="/posts" className="btn btn-secondary">
-          Barchasini ko'rish
+          View All
         </Link>
       </div>
 
       {loading ? (
-        <p>Yuklanmoqda...</p>
+        <p>Loading...</p>
       ) : (
         <div className="latest-posts">
           {posts.map((post) => (

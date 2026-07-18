@@ -452,3 +452,25 @@ button {
   align-items: center;
   /* Agar padding yoki border-radius kerak bo'lsa o'zingizniki turaveradi */
 }
+
+/* ===== Latest posts - equal size fix ===== */
+.latest-posts {
+  align-items: stretch;
+}
+
+.latest-posts .post-card {
+  flex: 1 1 320px;
+  max-width: 384px;
+  display: flex;
+  flex-direction: column;
+}
+
+.latest-posts .post-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.latest-posts .post-card-body p {
+  flex: 1;
+}

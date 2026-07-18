@@ -6,26 +6,27 @@ function Hero() {
       <div className="center hero-inner">
         <div className="hero-text">
           <h1>
-            Fikrlaringizni <span className="hero-gradient">dunyoga</span> ulashing
+            Share your thoughts with the <span className="hero-gradient">world</span>
           </h1>
           <p>
-            Blogify — bu sizning fikr, tajriba va bilimlaringizni bemalol
-            yozib, minglab o'quvchilarga yetkazish uchun platforma.
+            Blogify is the platform where you can freely write down your
+            ideas, experiences, and knowledge, and share them with thousands
+            of readers.
           </p>
           <div className="hero-buttons">
             <Link to="/register" className="btn btn-primary">
-              Boshlash
+              Get Started
             </Link>
-            <Link to="/blog" className="btn btn-secondary">
-              Postlarni ko'rish
+            <Link to="/posts" className="btn btn-secondary">
+              Explore Posts
             </Link>
           </div>
         </div>
 
         <img
           className="hero-img"
-          src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80"
-          alt="Blogify hero"
+          src="/Hero%20illustration.svg"
+          alt="Blogify hero illustration"
         />
       </div>
     </section>
